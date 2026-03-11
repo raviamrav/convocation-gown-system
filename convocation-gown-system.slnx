@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ConvocationGown.Api/ConvocationGown.Api.csproj" />
+  <Project Path="ConvocationGown.Core/ConvocationGown.Core.csproj" />
+  <Project Path="ConvocationGown.Infrastructure/ConvocationGown.Infrastructure.csproj" />
+</Solution>

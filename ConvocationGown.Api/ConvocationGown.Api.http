@@ -1,0 +1,6 @@
+@ConvocationGown.Api_HostAddress = http://localhost:5023
+
+GET {{ConvocationGown.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
