@@ -69,7 +69,7 @@ namespace ConvocationGown.Api.Services
                 item.TotalPrice = item.UnitPrice * item.Quantity;
             }
 
-            order.TotalAmount = order.OrderItems.Sum(i => i.TotalPrice);
+            order.TotalAmount = order.OrderItems!.Sum(i => i.TotalPrice);
 
             _context.Orders.Add(order);
             _context.SaveChanges();
