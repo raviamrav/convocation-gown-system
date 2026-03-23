@@ -1,4 +1,5 @@
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect } from "react";
+import type { FormEvent } from "react";
 import { getGowns } from "../services/gownService";
 import { submitOrder } from "../services/orderServices";
 
@@ -7,6 +8,7 @@ function OrderPage() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [selectedGownId, setSelectedGownId] = useState<number | null>(null);
+    const [quantity, setQuantity] = useState<number>(1);
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -33,8 +35,9 @@ function OrderPage() {
         fetchGowns();
     }, []);
 
-        const handleSubmit = async (e: React.FormEvent) => {
-            e.preventDefault();
+        // const handleSubmit = async (e: React.FormEvent) => {
+        const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+            event.preventDefault();
             if (!selectedGownId) {
                 setError("Please select a gown.");
                 return;
@@ -50,7 +53,7 @@ function OrderPage() {
                     items: [
                         {
                             gownId: selectedGownId,
-                            quantity: 1,
+                            quantity: quantity,
                         },
                     ],
                 };
@@ -95,7 +98,11 @@ function OrderPage() {
                             ))}
                         </select>
                     </div>
-                    <br/>
+                    <div>
+                        <label>Quantity:</label>
+                        <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} min="1" />
+                    </div>
+                    <br />
                     <button type="submit">Submit Order</button>
                 </form>
             </div>

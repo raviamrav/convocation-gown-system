@@ -8,9 +8,11 @@ const api = axios.create({
 });
 
 export async function submitOrder(orderData: {
-    name: string;
-    email: string;
-    gownId: number;
+  customerName: string;
+  email: string;
+  phone: string;
+  deliveryDate: string;
+  items: { gownId: number; quantity: number }[];
 }) {
     const response = await api.post("/Order", orderData);
     return response.data;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getGowns } from "../services/gownService";
-import { Gown } from "../models/Gown";
+import type { Gown } from "../models/Gown";
 
 function GownListPage() {
     const [gowns, setGowns] = useState<Gown[]>([]);
