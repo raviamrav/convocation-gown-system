@@ -2,6 +2,20 @@
 
 A backend API for managing convocation gown rentals for universities.
 
+A full-stack web application for managing convocation gown orders. Built with:
+- Backend: ASP.NET Core 8 + Entity Framework Core + PostgreSQL
+- Frontend: React + Vite
+- Containerized with Docker Compose
+
+## Running the project
+Make sure you have **Docker Desktop** installed and running.
+
+Clone the repo:
+```bash
+git clone <repo-url>
+cd convocation-gown-system
+git checkout <branch-name>
+
 ## Tech Stack
 
 * ASP.NET Core Web API
