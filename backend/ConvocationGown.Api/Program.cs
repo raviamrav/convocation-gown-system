@@ -36,11 +36,20 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 
+// Add this to listen on all interfaces
+app.Urls.Add("http://0.0.0.0:5050");
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowReact");
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
 
 app.Run();
