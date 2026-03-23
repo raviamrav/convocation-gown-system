@@ -18,6 +18,16 @@ RUN dotnet publish -c Release -o /app/publish
 # Stage 2: runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
+
+# Copy published files from build stage
 COPY --from=build /app/publish .
+
+# Copy wait-for-it script
+COPY wait-for-it.sh ./
+RUN chmod +x wait-for-it.sh
+
+# Expose API port
 EXPOSE 5050
-ENTRYPOINT ["dotnet", "ConvocationGown.Api.dll"]
+
+# Use wait-for-it to wait for DB, then start API
+ENTRYPOINT ["./wait-for-it.sh", "db:5432", "--", "dotnet", "ConvocationGown.Api.dll"]
