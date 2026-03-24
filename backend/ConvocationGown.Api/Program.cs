@@ -72,8 +72,8 @@ app.Urls.Add("http://0.0.0.0:5050");
 
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors("AllowReact"); 
 app.UseHttpsRedirection();
-app.UseCors("AllowReact");
 app.MapControllers();
 
 // Apply migrations
