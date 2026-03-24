@@ -23,8 +23,4 @@
     <ProjectReference Include="..\ConvocationGown.Infrastructure\ConvocationGown.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="Controllers\**\*.cs" />
-  </ItemGroup>
-
 </Project>
