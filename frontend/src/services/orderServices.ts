@@ -1,11 +1,4 @@
-import axios from "axios";
-
-const api = axios.create({
-    baseURL: "http://localhost:5050/api",
-    // headers: {
-    //     "Content-Type": "application/json",
-    // },
-});
+import api from "./api";
 
 export async function submitOrder(orderData: {
   customerName: string;
@@ -14,6 +7,6 @@ export async function submitOrder(orderData: {
   deliveryDate: string;
   items: { gownId: number; quantity: number }[];
 }) {
-    const response = await api.post("/Order", orderData);
+    const response = await api.post("/Order", orderData); // match Swagger exactly
     return response.data;
 }
