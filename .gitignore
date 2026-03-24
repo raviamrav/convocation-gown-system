@@ -5,4 +5,4 @@ obj/
 *.suo
 *.log
 node_modules/
-.env
+.env*
