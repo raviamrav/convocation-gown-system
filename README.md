@@ -71,6 +71,47 @@ POST /api/order
 GET /api/order
 GET /api/order/{id}
 ```
+**Environment Variables
+**Copy .env.example to .env
+Update the values:
+VITE_API_URL=http://localhost:5050/api
+DB_HOST=<your-database-host>
+DB_NAME=<your-database-name>
+DB_USER=<your-db-user>
+DB_PASSWORD=<your-db-password>
+DB_PORT=5432
+DB_SSLMODE=Require
+**For local Docker Postgres, use:
+**DB_HOST=localhost
+DB_NAME=ConvocationGownDb
+DB_USER=postgres
+DB_PASSWORD=secret
+DB_PORT=5432
+DB_SSLMODE=Disable
+For Neon live DB, use the connection string from Neon.
+Running Locally
+**Backend**
+cd backend/ConvocationGown.Api
+dotnet run --project ConvocationGown.Api.csproj
+**Frontend**
+cd frontend
+npm install
+npm run dev
+Backend runs on http://localhost:5050
+Frontend runs on http://localhost:5173
+**Docker (Optional Local Setup)
+**docker-compose up --build
+The backend connects to either Docker Postgres or Neon DB based on .env configuration.
+The database container is optional if you are testing with Neon DB.
+**Testing Neon DB Connection
+**Ensure .env has Neon DB credentials.
+Run backend locally, and Swagger UI should connect and apply migrations to the Neon DB.
+Verify data using Neon Dashboard
+.
+**Notes for Developers
+**Do not commit .env with secrets. Use .env.example as a reference.
+All DB migrations are applied automatically on startup.
+Frontend calls backend via VITE_API_URL.
 
 ## Future Improvements
 * Order status workflow
