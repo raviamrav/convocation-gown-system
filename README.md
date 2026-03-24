@@ -71,8 +71,8 @@ POST /api/order
 GET /api/order
 GET /api/order/{id}
 ```
-**Environment Variables
-**Copy .env.example to .env
+**Environment Variables**
+Copy .env.example to .env
 Update the values:
 VITE_API_URL=http://localhost:5050/api
 DB_HOST=<your-database-host>
@@ -81,15 +81,15 @@ DB_USER=<your-db-user>
 DB_PASSWORD=<your-db-password>
 DB_PORT=5432
 DB_SSLMODE=Require
-**For local Docker Postgres, use:
-**DB_HOST=localhost
+**For local Docker Postgres, use:**
+DB_HOST=localhost
 DB_NAME=ConvocationGownDb
 DB_USER=postgres
 DB_PASSWORD=secret
 DB_PORT=5432
 DB_SSLMODE=Disable
 For Neon live DB, use the connection string from Neon.
-Running Locally
+**Running Locally**
 **Backend**
 cd backend/ConvocationGown.Api
 dotnet run --project ConvocationGown.Api.csproj
