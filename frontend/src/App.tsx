@@ -1,12 +1,32 @@
-import AppRouter from './router/AppRouter';
+import AppRouter from "./router/AppRouter";
 
-function App() {
+export default function App() {
   return (
+    <div className="min-h-screen bg-gray-100">
       <AppRouter />
+    </div>
   );
 }
 
-export default App;
+// export default function App() {
+//   return (
+//     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+//       <h1 className="text-4xl font-bold text-blue-600">
+//         Convocation Gown System 🎓
+//       </h1>
+//     </div>
+//   );
+// }
+
+// import AppRouter from './router/AppRouter';
+
+// function App() {
+//   return (
+//       <AppRouter />
+//   );
+// }
+
+// export default App;
 
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
