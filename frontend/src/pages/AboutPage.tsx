@@ -89,28 +89,34 @@ function AboutPage() {
     <br />
     <h2 className="text-2xl font-bold text-gray-800 mb-4">🧠 Key Concepts Demonstrated</h2>
     <div className="space-y-4">
-    REST API design and integration
-    Dependency Injection in ASP.NET Core
-    Database design with Entity Framework Core
-    Environment configuration (.env for dev/prod)
-    CORS handling and API connectivity
-    Fullstack deployment and debugging
+    <ul>
+        <li>REST API design and integration</li>
+        <li>Dependency Injection in ASP.NET Core</li>
+        <li>Database design with Entity Framework Core</li>
+        <li>Environment configuration (.env for dev/prod)</li>
+        <li>CORS handling and API connectivity</li>
+        <li>Fullstack deployment and debugging</li>
+    </ul>
     </div>
     <br />
     <h2 className="text-2xl font-bold text-gray-800 mb-4">🔐 Environment & Configuration</h2>
     <div className="space-y-4">
-    Separate configurations for local and production environments
-    Secure database connection using SSL
-    API base URLs managed via environment variables
+    <ul>
+        <li>Separate configurations for local and production environments</li>
+        <li>Secure database connection using SSL</li>
+        <li>API base URLs managed via environment variables</li>
+    </ul>
     </div>
     <br />
     <h2 className="text-2xl font-bold text-gray-800 mb-4">📈 Future Enhancements</h2>
     <div className="space-y-4">
-    Admin panel for business users
-    Automated notifications (WhatsApp / Email)
-    Enhanced UI using Tailwind components
-    AI-based analytics and reporting
-    Role-based access control
+    <ul>
+        <li>Admin panel for business users</li>
+        <li>Automated notifications (WhatsApp / Email)</li>
+        <li>Enhanced UI using Tailwind components</li>
+        <li>AI-based analytics and reporting</li>
+        <li>Role-based access control</li>
+    </ul>
     </div>
     </div>
   );
