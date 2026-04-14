@@ -39,6 +39,13 @@ function AboutPage() {
     <li>Version Control: GitHub (auto-deploy enabled)</li>
     </ul>
     <br />
+    <ul>
+    <li><strong>API Documentation & Testing</strong></li>
+    <li><a href="https://convocation-gown-system.onrender.com/swagger/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+      Swagger</a>
+    </li>
+    </ul>
+    <br />
     <h2 className="text-2xl font-bold text-gray-800 mb-4">🔄 How the System Works</h2>
     <div className="space-y-4">
     <ul>
