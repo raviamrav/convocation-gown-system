@@ -1,19 +1,4 @@
-#version: "3.9"
-
 services:
-  # db:
-  #   image: postgres:15
-  #   container_name: gown-db
-  #   environment:
-  #     POSTGRES_DB: ConvocationGownDb
-  #     POSTGRES_USER: postgres
-  #     POSTGRES_PASSWORD: postgres
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - pgdata:/var/lib/postgresql/data
-  #     - ./db-init:/docker-entrypoint-initdb.d
-
   backend:
     build:
       context: ./backend
@@ -29,9 +14,6 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_PORT: ${DB_PORT}
       DB_SSLMODE: ${DB_SSLMODE}
-    depends_on: []
-    # depends_on:
-    #   - db
   frontend:
     build:
       context: ./frontend
@@ -41,5 +23,3 @@ services:
       - "5173:80"
     depends_on:
       - backend
-# volumes:
-#   pgdata:

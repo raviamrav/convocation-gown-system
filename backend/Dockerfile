@@ -22,12 +22,16 @@ WORKDIR /app
 # Copy published files from build stage
 COPY --from=build /app/publish .
 
-# Copy wait-for-it script
-COPY wait-for-it.sh ./
-RUN chmod +x wait-for-it.sh
+# # Copy wait-for-it script - used to wait for (local) DB to be ready before starting API
+# COPY wait-for-it.sh ./
+# RUN chmod +x wait-for-it.sh
 
-# Expose API port
+# # Expose API port
+# EXPOSE 5050
+
+# # Use wait-for-it to wait for DB, then start API
+# ENTRYPOINT ["./wait-for-it.sh", "db:5432", "--", "dotnet", "ConvocationGown.Api.dll"]
+
 EXPOSE 5050
 
-# Use wait-for-it to wait for DB, then start API
-ENTRYPOINT ["./wait-for-it.sh", "db:5432", "--", "dotnet", "ConvocationGown.Api.dll"]
+ENTRYPOINT ["dotnet", "ConvocationGown.Api.dll"]
