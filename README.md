@@ -53,9 +53,9 @@ ConvocationGown.Infrastructure → Database + EF Core
 ```
 
 **Setup & Run**
-
+```
 1.  Clone the repository
-    C:\test\> git clone https://github.com/raviamrav/convocation-gown-system.git
+    PS: \test\> git clone https://github.com/raviamrav/convocation-gown-system.git
     cd convocation-gown-system
 
 2.  setup/create env file
@@ -75,7 +75,7 @@ ConvocationGown.Infrastructure → Database + EF Core
 
 3.  Build project
     Option 1: through Docker - open docker.desktop / start docker engine
-    PS C:\test\convocation-gown-system> docker compose up --build
+    PS: \test\convocation-gown-system> docker compose up --build
     open http://localhost:5173
 
         *Bring down any existing containers (if needed)
@@ -96,7 +96,7 @@ ConvocationGown.Infrastructure → Database + EF Core
     Frontend runs on http://localhost:5173
     Backend runs on http://localhost:5050
     API Swagger: http://localhost:5050/swagger/index.html
-
+```
 ## API Endpoints
 
 ### Gown
@@ -116,6 +116,7 @@ GET /api/order/{id}
 ```
 
 **Environment Variables**
+```
 Copy .env.example to .env
 Update the values:
 DB_HOST=<your-database-host>
@@ -132,8 +133,10 @@ DB_PASSWORD=secret
 DB_PORT=5432
 DB_SSLMODE=Disable
 For Neon live DB, use the connection string from Neon.
+```
 
 **Notes for Developers
+```
 **Do not commit .env with secrets. Use .env.example as a reference.
 All DB migrations are applied automatically on startup.
 Frontend calls backend via VITE_API_URL.
@@ -143,6 +146,7 @@ The database container is optional if you are testing with Neon DB.
 **Ensure .env has Neon DB credentials.
 Run backend locally, and Swagger UI should connect and apply migrations to the Neon DB.
 Verify data using Neon Dashboard
+```
 
 ## Future Improvements
 
