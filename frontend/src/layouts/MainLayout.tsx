@@ -28,6 +28,7 @@ function MainLayout() {
               This project is a non-commercial portfolio piece used to demonstrate 
               Full-Stack Engineering skills.
             </p>
+            <p className="italic pt-2">Check out my <a href="https://priyamfoods.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Priyam Foods</a></p>
           </div>
         </div>
       </footer>
