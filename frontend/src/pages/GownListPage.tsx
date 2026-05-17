@@ -16,7 +16,8 @@ function GownListPage() {
                 const data = await getGowns();
                 setGowns(data);
             } catch {
-                setError("Failed to fetch gowns.");
+                // setError("Failed to fetch gowns.");
+                setError("⚠️ Service temporarily unavailable — monthly hosting limit reached.\nFor a live demo, please contact: raviamrav@yahoo.com");
             } finally {
                 setLoading(false);
             }
