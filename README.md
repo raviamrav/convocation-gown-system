@@ -155,7 +155,11 @@ Verify data using Neon Dashboard
 - Admin panel
 - Agentic AI for admin users to generate reports and statastics
 
-## Author
+## App Screens
+<img width="949" height="935" alt="image" src="https://github.com/user-attachments/assets/ccd0944f-2e29-4980-8859-c5b2caad7ec9" />
+<img width="954" height="937" alt="image" src="https://github.com/user-attachments/assets/6140d043-4b54-4f1e-bbda-a94005c373c3" />
+<img width="933" height="942" alt="image" src="https://github.com/user-attachments/assets/71a139ee-4558-4268-a312-c8db8502a41a" />
 
+## Author
 Portfolio project by Ravivarma Singarvelu
 for any questions reach me at raviamrav@yahoo.com
