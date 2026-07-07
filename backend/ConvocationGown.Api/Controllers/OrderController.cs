@@ -3,6 +3,7 @@ using ConvocationGown.Core.Entities;
 using ConvocationGown.Infrastructure.Data;
 using ConvocationGown.Api.DTOs;
 using ConvocationGown.Api.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ConvocationGown.Api.Controllers
 {
@@ -27,13 +28,13 @@ namespace ConvocationGown.Api.Controllers
         {
             var order = _orderService.CreateOrder(dto);
 
-            // return Ok(new
             return Created($"api/orders/{order.Id}", new
             {
                 OrderId = order.Id
             });
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult GetOrders()
         {
@@ -41,6 +42,7 @@ namespace ConvocationGown.Api.Controllers
             return Ok(orders);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet ("{id}")]
         public IActionResult GetOrderById(int id)
         {

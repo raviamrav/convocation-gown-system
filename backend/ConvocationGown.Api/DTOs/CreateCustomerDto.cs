@@ -18,6 +18,5 @@ namespace ConvocationGown.Api.DTOs
         public string? SecondaryPhoneNumber { get; set; }
         public DateTime EventDateTime { get; set; }
         public string EventAddress { get; set; } = String.Empty;
-
     }
 }

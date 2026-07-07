@@ -5,6 +5,7 @@ using ConvocationGown.Api.DTOs;
 using ConvocationGown.Api.Services;
 using ConvocationGown.Infrastructure.Data;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ConvocationGown.Api.Controllers
 {
@@ -44,6 +45,15 @@ namespace ConvocationGown.Api.Controllers
             return Ok(gowns);
         }
 
+        //For learning & testing purposes, to verify that the [Authorize] attribute is working correctly.
+        //[Authorize]
+        //[HttpGet("secure-test")]
+        //public IActionResult SecureTest()
+        //{
+        //    return Ok("You are authorized to access this endpoint.");
+        //}
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Create(CreateGownDto dto)
         {
@@ -53,24 +63,9 @@ namespace ConvocationGown.Api.Controllers
             gown.CreatedDate = DateTime.UtcNow;
             gown.UpdatedDate = DateTime.UtcNow;
 
-            //var gown = new Gown
-            //{
-            //    Name        = dto.Name,
-            //    Description = dto.Description,
-            //    Color       = dto.Color,
-            //    Size        = dto.Size,
-            //    Price       = dto.Price,
-            //    CautionDeposit = dto.CautionDeposit,
-            //    CreatedDate = DateTime.UtcNow,
-            //    UpdatedDate = DateTime.UtcNow,
-            //};
-
-            //_context.Gowns.Add(gown);
-            //_context.SaveChanges();
             var result = _gownService.Create(gown);
+
             return Ok(gown);
         }
-
-
     }
 }
