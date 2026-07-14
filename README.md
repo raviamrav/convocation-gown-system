@@ -34,20 +34,36 @@ To install the Convocation Gown System, follow these steps:
 - Swagger (API documentation)
 - Git + GitHub
 
-## Features
+# Features
 
-- Create gowns
-- Create orders
+## Customer Features
+
+- Browse available gowns
+- Create rental orders
 - Add multiple items to an order
-- Calculate total order amount
+- Automatic order total calculation
+
+## Backend Features
+
 - REST API architecture
 - DTO-based request/response models
 - Service layer architecture
+- Entity Framework Core
+- Docker support
+- Swagger API documentation
+
+## Security
+
+- JWT Authentication
+- Role-based Authorization (Admin)
+- Password hashing
+- Protected Admin endpoints
+- Swagger JWT Bearer authentication
 
 ## Project Architecture
 
 ```
-ConvocationGown.Api           → Controllers + DTOs + Services
+ConvocationGown.Api           → Controllers + DTOs + Services + Authentication
 ConvocationGown.Core          → Domain Entities
 ConvocationGown.Infrastructure → Database + EF Core
 ```
@@ -99,12 +115,24 @@ ConvocationGown.Infrastructure → Database + EF Core
 ```
 ## API Endpoints
 
+## Authentication
+
+```
+POST /api/auth/login
+GET  /api/auth/me
+```
+
 ### Gown
 
 ```
-POST /api/gown
-GET /api/gown
-GET /api/gown/{id}
+GET    /api/gown
+GET    /api/gown/{id}
+
+POST   /api/gown        (Admin)
+
+PUT    /api/gown/{id}   (Admin)
+
+DELETE /api/gown/{id}   (Admin)
 ```
 
 ### Orders
@@ -125,6 +153,7 @@ DB_USER=<your-db-user>
 DB_PASSWORD=<your-db-password>
 DB_PORT=5432
 DB_SSLMODE=Require
+JWT_KEY=<YourSecretKeyTextForAuthentication>
 **For local Docker Postgres, use:**
 DB_HOST=localhost
 DB_NAME=ConvocationGownDb
@@ -132,6 +161,7 @@ DB_USER=postgres
 DB_PASSWORD=secret
 DB_PORT=5432
 DB_SSLMODE=Disable
+JWT_KEY=<YourSecretKeyTextForAuthentication>
 For Neon live DB, use the connection string from Neon.
 ```
 
@@ -150,16 +180,37 @@ Verify data using Neon Dashboard
 
 ## Future Improvements
 
-- Order status workflow
-- Authentication (JWT)
-- Admin panel
-- Agentic AI for admin users to generate reports and statastics
+- React Admin Dashboard
+- Customer Authentication
+- Refresh Tokens
+- Password Reset
+- Email Notifications
+- Order Status Workflow
+- Reporting Dashboard
+- Agentic AI for reporting and analytics
 
 ## App Screens
+Home Page:
 <img width="949" height="935" alt="image" src="https://github.com/user-attachments/assets/ccd0944f-2e29-4980-8859-c5b2caad7ec9" />
+Gowns List:
 <img width="954" height="937" alt="image" src="https://github.com/user-attachments/assets/6140d043-4b54-4f1e-bbda-a94005c373c3" />
+Order Creation:
 <img width="933" height="942" alt="image" src="https://github.com/user-attachments/assets/71a139ee-4558-4268-a312-c8db8502a41a" />
+Swagger API:
+<img width="1719" height="964" alt="image" src="https://github.com/user-attachments/assets/e73416ab-1ee2-4e51-937d-67576681f681" />
+
 
 ## Author
-Portfolio project by Ravivarma Singarvelu
-for any questions reach me at raviamrav@yahoo.com
+**Ravivarma Singaravelu**
+
+Portfolio  
+https://raviamrav.github.io/
+
+LinkedIn  
+https://www.linkedin.com/in/ravivarma-singaravelu/
+
+GitHub  
+https://github.com/raviamrav
+
+Email  
+raviamrav@yahoo.com
