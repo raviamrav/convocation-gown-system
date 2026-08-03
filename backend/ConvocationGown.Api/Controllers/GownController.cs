@@ -10,7 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 namespace ConvocationGown.Api.Controllers
 {
     [ApiController] //Enables automatic API behavior (validation, binding)
-    [Route("api/[Controller]")] // url api/gown
+    // [Route("api/[Controller]")] // url api/gown
+    [Route("api/gown")]
     public class GownController : ControllerBase
     {
         // Allows controller to access the database called Dependency Injection
@@ -65,7 +66,48 @@ namespace ConvocationGown.Api.Controllers
 
             var result = _gownService.Create(gown);
 
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var gown = _gownService.GetById(id);
+            if (gown == null)
+            {
+                return NotFound();
+            }
             return Ok(gown);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, CreateGownDto dto)
+        {
+            var existingGown = _gownService.GetById(id);
+            if (existingGown == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(dto, existingGown);
+            existingGown.UpdatedDate = DateTime.UtcNow;
+
+            var updatedGown = _gownService.Update(existingGown);
+
+            return Ok(updatedGown);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var success = _gownService.Delete(id);
+            if (!success)
+            {
+                return NotFound();
+            }
+            return NoContent();
         }
     }
 }

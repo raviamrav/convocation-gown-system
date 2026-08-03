@@ -4,7 +4,19 @@ const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL, // automatically picks local or production
     headers: {
         "Content-Type": "application/json",
+        // "Authorization": `Bearer ${sessionStorage.getItem("authToken") || ""}`,
     },
+});
+
+// Automatically attach JWT to every request
+api.interceptors.request.use((config) => {
+    const token = sessionStorage.getItem("authToken");
+
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return config;
 });
 
 export default api;

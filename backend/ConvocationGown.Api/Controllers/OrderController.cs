@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 namespace ConvocationGown.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    // [Route("api/[controller]")]
+    [Route("api/order")]
     public class OrderController : ControllerBase
     {
         //private readonly AppDbContext _context;

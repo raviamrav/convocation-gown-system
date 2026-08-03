@@ -11,6 +11,31 @@
 import mechImage from "./men-blue.png";
 import compImage from "./men-yellow.png";
 
+// import black-bitter_lemon from "./black-bitter_lemon.png";
+// import black-bitter_lemon_thumb from "./black-bitter_lemon_thumb.png";
+// import black-blue from "./black-blue.png";
+// import black-blue_thumb from "./black-blue_thumb.png";
+// import black-cobalt_blue from "./black-cobalt_blue.png";
+// import black-cobalt_blue_thumb from "./black-cobalt_blue_thumb.png";
+// import black-green from "./black-green.png";
+// import black-green_thumb from "./black-green_thumb.png";
+// import black-kelly_green from "./black-kelly_green.png";
+// import black-kelly_green_thumb from "./black-kelly_green_thumb.png";
+// import black-navy_blue from "./black-navy_blue.png";
+// import black-navy_blue_thumb from "./black-navy_blue_thumb.png";
+// import black-orange from "./black-orange.png";
+// import black-orange_thumb from "./black-orange_thumb.png";
+// import black-purple from "./black-purple.png";
+// import black-purple_thumb from "./black-purple_thumb.png";
+// import black-red from "./black-red.png";
+// import black-red_thumb from "./black-red_thumb.png";
+// import black-silver from "./black-silver.png";
+// import black-silver_thumb from "./black-silver_thumb.png";
+// import black-yellow from "./black-yellow.png";
+// import black-yellow_thumb from "./black-yellow_thumb.png";
+
+
+
 const gownImages: Record<string, string> = {
     "Mechanical Engineering Gown Black 1": mechImage,
     "Computer Science Engineering 1": compImage,

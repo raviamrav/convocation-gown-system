@@ -86,6 +86,12 @@ function GownListPage() {
                                     <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full font-medium">
                                         Price: {gown.price} €
                                     </span>
+                                    <span className="bg-yellow-50 text-yellow-700 text-xs px-2 py-1 rounded-full font-medium">
+                                        Desc: {gown.description}
+                                    </span>
+                                    <span className="bg-orange-50 text-orange-700 text-xs px-2 py-1 rounded-full font-medium">
+                                        Caution Deposit: {gown.cautionDeposit} €
+                                    </span>
                                 </div>
                             </div>
                         </div>

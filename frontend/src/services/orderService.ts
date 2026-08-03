@@ -7,6 +7,6 @@ export async function submitOrder(orderData: {
   deliveryDate: string;
   items: { gownId: number; quantity: number }[];
 }) {
-    const response = await api.post("/Order", orderData); // match Swagger exactly
+    const response = await api.post("/order", orderData); // match Swagger exactly
     return response.data;
 }

@@ -1,5 +1,4 @@
-export interface Gown {
-    id: number;
+export interface CreateGown {
     name: string;
     description: string;
     size: string;

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 import { getGowns } from "../services/gownService";
-import { submitOrder } from "../services/orderServices";
+import { submitOrder } from "../services/orderService";
 import type { Gown } from "../models/Gown";
 import { getGownImage } from "../assets/images/gownImages";
 
@@ -154,13 +154,24 @@ function OrderPage() {
                             required
                             className="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                         />
-                        <input
-                            type="date"
-                            value={deliveryDate}
-                            onChange={e => setDeliveryDate(e.target.value)}
-                            required
-                            className="border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        />
+
+                        <div className="relative">
+                            <input
+                                id="deliveryDate"
+                                type="date"
+                                value={deliveryDate}
+                                onChange={e => setDeliveryDate(e.target.value)}
+                                required
+                                className="peer w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+
+                            <label
+                                htmlFor="deliveryDate"
+                                className="absolute left-3 -top-2 bg-white px-1 text-xs text-gray-500"
+                            >
+                                Convocation Date
+                            </label>
+                        </div>
                     </div>
                 </section>
 
